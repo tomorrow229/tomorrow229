@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>О нас - VetClinic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: #fff7f3;
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    nav {
+      background: #ffe3d8;
+      padding: 16px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111827;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #ff9770;
+      color: white;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 60px auto 40px;
+      padding: 0 20px;
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      width: 100%;
+      text-align: center;
+      color: #111827;
+    }
+
+    .about-content {
+      max-width: 900px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+      color: #555;
+    }
+
+    .about-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+    }
+
+    .testimonials-container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 30px 0;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .testimonial-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .testimonial-card .client-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card .client-feedback {
+      font-size: 1rem;
+      color: #777;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #ff9770;
+      font-weight: 600;
+    }
+
+    /* Мобильная версия */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .about-content {
+        font-size: 1rem;
+      }
+
+      .testimonial-card {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="services.html">Услуги</a>
+    <a href="doctors.html">Наши врачи</a>
+    <a href="about.html" class="active">О нас</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+  
+  <main>
+    <h1>О нашей клинике</h1>
+
+    <div class="about-content">
+      <h2>Наши ценности</h2>
+      <p>
+        Мы - команда опытных специалистов, посвятивших свою жизнь заботе о животных. Наша клиника предоставляет полный спектр услуг для ваших питомцев, от профилактики до сложных хирургических операций.
+      </p>
+      <p>
+        В нашей работе мы ориентируемся на высокие стандарты качества и внимательное отношение к каждому пациенту. Мы понимаем, что питомцы – это не просто животные, а члены вашей семьи, и поэтому заботимся о них с любовью и профессионализмом.
+      </p>
+      <p>
+        Мы всегда готовы помочь вашим питомцам, обеспечив им комфорт и правильное лечение в любой ситуации. Наши ветеринары используют самые современные методы диагностики и лечения.
+      </p>
+    </div>
+
+    <h2>Отзывы наших клиентов</h2>
+
+    <div class="testimonials-container">
+      <!-- Отзыв 1 -->
+      <div class="testimonial-card">
+        <img src="client1.jpg" alt="Отзыв клиента" />
+        <div class="client-name">Анна Иванова</div>
+        <div class="client-feedback">
+          «Были у вас с нашим котиком по поводу аллергии. Врач был очень внимателен и тщательно исследовал проблему. В результате лечение помогло, котик чувствует себя отлично!»
+        </div>
+      </div>
+
+      <!-- Отзыв 2 -->
+      <div class="testimonial-card">
+        <img src="client2.jpg" alt="Отзыв клиента" />
+        <div class="client-name">Дмитрий Ковалев</div>
+        <div class="client-feedback">
+          «Обращались за помощью с нашим псом. Прекрасный подход к животным, отлично объяснили все детали лечения. Очень благодарны всей команде!»
+        </div>
+      </div>
+
+      <!-- Отзыв 3 -->
+      <div class="testimonial-card">
+        <img src="client3.jpg" alt="Отзыв клиента" />
+        <div class="client-name">Елена Мартынова</div>
+        <div class="client-feedback">
+          «Вы спасли моего попугая! Очень оперативно приняли, провели все необходимые процедуры и теперь он снова здоров и весел. Огромное спасибо!»
+        </div>
+      </div>
+
+      <!-- Отзыв 4 -->
+      <div class="testimonial-card">
+        <img src="client4.jpg" alt="Отзыв клиента" />
+        <div class="client-name">Игорь Никитин</div>
+        <div class="client-feedback">
+          «Мы обратились с собакой после травмы. Врачи проделали отличную работу, и собака в кратчайшие сроки восстановилась. Отличная клиника с профессиональными специалистами!»
+        </div>
+      </div>
+
+      <!-- Отзыв 5 -->
+      <div class="testimonial-card">
+        <img src="client5.jpg" alt="Отзыв клиента" />
+        <div class="client-name">Мария Лебедева</div>
+        <div class="client-feedback">
+          «Потрясающая клиника! Врачи не только квалифицированы, но и настоящие любители животных. Моя кошка легко перенесла операцию, и сейчас чувствует себя прекрасно!»
+        </div>
+      </div>
+
+      <!-- Отзыв 6 -->
+      <div class="testimonial-card">
+        <img src="client6.jpg" alt="Отзыв клиента" />
+        <div class="client-name">Алексей Смирнов</div>
+        <div class="client-feedback">
+          «Очень благодарен всем сотрудникам клиники за помощь в лечении моего попугая. Все было быстро и безболезненно. Чувствую, что моя птица в надежных руках!»
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 VetClinic. Все права защищены.</p>
+    <p>Контакты: <a href="mailto:info@vetclinic.ru">info@vetclinic.ru</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VetClinic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: #fff7f3;
+      color: #111827;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background: #ffe3d8;
+      padding: 16px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111827;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #ff9770;
+      color: white;
+    }
+
+    header {
+      background: #ffe3d8;
+      padding: 80px 40px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .circle-bg {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 203, 176, 0.4);
+      z-index: 0;
+    }
+
+    .circle1 {
+      width: 300px;
+      height: 300px;
+      top: 20px;
+      left: -100px;
+    }
+
+    .circle2 {
+      width: 200px;
+      height: 200px;
+      bottom: 80px;
+      right: -50px;
+    }
+
+    .header-content {
+      max-width: 520px;
+      z-index: 1;
+      text-align: left;
+    }
+
+    .main-image {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 8px solid white;
+      box-shadow: 0 10px 25px rgba(255, 157, 118, 0.4);
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+    }
+
+    .buttons button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 16px;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s;
+    }
+
+    .primary {
+      background-color: #ff9770;
+      color: white;
+    }
+
+    .primary:hover {
+      background-color: #ff8253;
+    }
+
+    .outline {
+      background-color: white;
+      color: #ff9770;
+      border: 2px solid #ff9770;
+    }
+
+    .outline:hover {
+      background-color: #ffece5;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card .text {
+      padding: 20px;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #374151;
+    }
+
+    footer {
+      background-color: #1f2937;
+      color: #e5e7eb;
+      padding: 50px 20px;
+    }
+
+    footer .footer-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    footer h4 {
+      font-size: 1.125rem;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    footer ul {
+      list-style: none;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.75rem;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        gap: 20px;
+        padding: 12px 20px;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-content {
+        text-align: center;
+        padding: 0;
+      }
+      .main-image {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="active">Главная</a>
+    <a href="services.html">Услуги</a>
+    <a href="doctors.html">Наши врачи</a>
+    <a href="about.html">О Нас</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+
+  
+  <header>
+    <div class="circle-bg circle1"></div>
+    <div class="circle-bg circle2"></div>
+
+    <div class="header-content">
+      <h1>Забота о вашем питомце — наша профессия</h1>
+      <p>Клиника с душой: квалифицированная помощь животным в тёплой, дружелюбной атмосфере</p>
+      <div class="buttons">
+        <button class="primary" onclick="alert('Запись недоступна')">Записаться</button>
+        <button class="outline" onclick="window.location.href='tel:+74951234567'">Позвонить</button>
+      </div>
+    </div>
+
+    <img src="cat.png" alt="Кот" class="main-image" />
+  </header>
+
+  <!-- Услуги -->
+  <section>
+    <h2>Наши услуги</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="vet1.png" alt="Уход за кроликами">
+        <div class="text">
+          <h3>Консультация</h3>
+          <p>Поможем разобраться в самочуствии вашего питомца, подскажем по уходу, питанию и профилактике</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="vet 2.png" alt="Вакцинация собак">
+        <div class="text">
+          <h3>Вакцинация</h3>
+          <p>Защита от опасных инфекций - своевременно и безопасно. Составим индивидуальный график прививок</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="vet 3.png" alt="Общий осмотр">
+        <div class="text">
+          <h3>Лечение</h3>
+          <p>От первых симптомов до полного выздоровления. Диагностика, терапия и забота на каждом этапе.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li>г. Москва, ул. Лапы 12</li>
+          <li>+7 (495) 123-45-67</li>
+          <li>info@vetclinic.ru</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Часы работы</h4>
+        <ul>
+          <li>Пн–Пт: 09:00 – 20:00</li>
+          <li>Сб: 10:00 – 18:00</li>
+          <li>Вс: 10:00 – 16:00</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li>Вакцинация</li>
+          <li>Хирургия</li>
+          <li>Диагностика</li>
+          <li>Стационар</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Мы в соцсетях</h4>
+        <ul>
+          <li>Instagram</li>
+          <li>VK</li>
+          <li>Telegram</li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> VetClinic. Все права защищены.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

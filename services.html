@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Услуги - VetClinic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: #fff7f3;
+      color: #111827;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-image: url('https://www.freepngimg.com/thumb/dog_paw_print/5-2-dog-paw-print-transparent.png'); /* Лапка собаки в формате PNG */
+      background-repeat: repeat;
+      background-size: 10%; /* Размер лапок */
+      background-position: center center;
+    }
+
+    /* Навигация */
+    nav {
+      background: #ffe3d8;
+      padding: 16px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111827;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #ff9770;
+      color: white;
+    }
+
+    /* Основной контейнер */
+    main {
+      max-width: 1100px;
+      margin: 60px auto 40px;
+      padding: 0 20px;
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      position: relative;
+      z-index: 2; /* Убедитесь, что контент находится выше фона */
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      width: 100%;
+      text-align: center;
+      color: #111827;
+      margin-bottom: 40px;
+    }
+
+    /* Круги на фоне */
+    .circle-bg {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 203, 176, 0.4);
+      z-index: 1; /* Обеспечивает, что круги будут на заднем плане */
+    }
+
+    .circle1 {
+      width: 300px;
+      height: 300px;
+      top: 50px; /* Смещаем вверх */
+      left: -120px;
+    }
+
+    .circle2 {
+      width: 200px;
+      height: 200px;
+      bottom: 60px; /* Смещаем вниз */
+      right: -50px;
+    }
+
+    /* Контейнер для цен и кнопки */
+    .price-and-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .price-box {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(255, 157, 118, 0.4);
+      padding: 30px 40px;
+      width: 100%;
+      z-index: 2; /* Убедитесь, что таблица в контенте будет выше фона */
+    }
+
+    .price-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid #f0d7cb;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #374151;
+    }
+
+    .price-item:last-child {
+      border-bottom: none;
+    }
+
+    .service-name {
+      max-width: 70%;
+      white-space: pre-wrap;
+    }
+
+    .service-price {
+      font-weight: 600;
+      color: #ff9770;
+      min-width: 90px;
+      text-align: right;
+    }
+
+    .btn-appointment {
+      padding: 14px 36px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: white;
+      background-color: #ff9770;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 151, 112, 0.7);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      width: 100%;
+      max-width: 300px;
+      user-select: none;
+    }
+
+    .btn-appointment:hover {
+      box-shadow: 0 0 20px 5px rgba(255, 151, 112, 0.9);
+      transform: scale(1.05);
+    }
+
+    /* Футер */
+    footer {
+      background: #ffe3d8;
+      padding: 30px 20px;
+      text-align: center;
+      color: #111827;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    footer .footer-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    /* Мобильная версия */
+    @media (max-width: 768px) {
+      .price-and-button {
+        gap: 15px;
+      }
+
+      .price-box {
+        padding: 20px;
+      }
+
+      .price-item {
+        font-size: 1rem;
+      }
+
+      .btn-appointment {
+        max-width: 250px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .price-box {
+        padding: 20px;
+      }
+
+      .price-item {
+        font-size: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .service-price {
+        text-align: left;
+        margin-top: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="services.html" class="active">Услуги</a>
+    <a href="doctors.html">Наши врачи</a>
+    <a href="about.html">О Нас</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+  
+  <main>
+    <!-- Фоновые круги -->
+    <div class="circle-bg circle1"></div>
+    <div class="circle-bg circle2"></div>
+    
+    <div class="price-and-button">
+      <h1>Стоимость приёма врача</h1>
+      <div class="price-box">
+        <div class="price-item">
+          <div class="service-name">Первичный прием ветеринарного врача</div>
+          <div class="service-price">1000 руб.</div>
+        </div>
+        <div class="price-item">
+          <div class="service-name">Повторный прием ветеринара терапевта</div>
+          <div class="service-price">700 руб.</div>
+        </div>
+        <div class="price-item">
+          <div class="service-name">Первичный специализированный прием ветеринара</div>
+          <div class="service-price">,,, руб.</div>
+        </div>
+        <div class="price-item">
+          <div class="service-name">Специализированный прием экзотических животных</div>
+          <div class="service-price">1500 руб.</div>
+        </div>
+        <div class="price-item">
+          <div class="service-name">Консультация ветеринарного кардиолога</div>
+          <div class="service-price">1000 руб.</div>
+        </div>
+        <div class="price-item">
+          <div class="service-name">Прием ветеринара-ортопеда</div>
+          <div class="service-price">1500 руб.</div>
+        </div>
+        <div class="price-item">
+          <div class="service-name">Прием ветеринарного офтальмолога</div>
+          <div class="service-price">1500 руб.</div>
+        </div>
+        <div class="price-item">
+          <div class="service-name">Прием ветеринарного дерматолога</div>
+          <div class="service-price">1500 руб.</div>
+        </div>
+      </div>
+      <button class="btn-appointment" onclick="alert('Запись недоступна')">Записаться</button>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer-title">VetClinic © 2025</div>
+    Все права защищены
+  </footer>
+</body>
+</html>
